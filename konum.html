@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konum – Damla Güzellik Salonu</title>
+
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #fff5f8;
+}
+
+/* 🌸 Sol Menü */
+#sideMenu {
+    width: 230px;
+    height: 100%;
+    background: #f7cfe0;
+    position: fixed;
+    top: 0;
+    left: -260px;
+    padding: 25px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    transition: 0.35s;
+    z-index: 9999;
+}
+#sideMenu a {
+    display: block;
+    margin: 15px 0;
+    font-size: 18px;
+    color: #7a2340;
+    text-decoration: none;
+    font-weight: bold;
+}
+#menuBtn {
+    font-size: 35px;
+    cursor: pointer;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 10000;
+}
+.bg-dark {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 9000;
+}
+
+/* Konum kutusu */
+.map-box {
+    margin: 100px auto;
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.map-box h2 {
+    color: #a02160;
+    text-align: center;
+}
+.address {
+    background: #ffe3ee;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🌸 Menü -->
+<div id="menuBtn">🌸</div>
+
+<div id="sideMenu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="fiyatlar.html">Fiyatlar</a>
+    <a href="randevu.html">Randevu</a>
+    <a href="iletisim.html">İletişim</a>
+    <a href="konum.html">Konum</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="yorumlar.html">Yorumlar</a>
+</div>
+
+<div class="bg-dark" id="darkBG"></div>
+
+<script>
+const menu = document.getElementById("sideMenu");
+const bg = document.getElementById("darkBG");
+document.getElementById("menuBtn").onclick = () => {
+    menu.style.left = "0";
+    bg.style.display = "block";
+};
+bg.onclick = () => {
+    menu.style.left = "-260px";
+    bg.style.display = "none";
+};
+</script>
+
+<!-- 🌸 Konum Kutusu -->
+<div class="map-box">
+    <h2>Salon Konumu</h2>
+
+    <div class="address">
+        📍 <b>Adres:</b><br>
+        Atatürk, Hoca Ahmet Yesevi Cd. No:175 Kat:1 Daire:2  
+        <br>Buca / İzmir
+    </div>
+
+    <!-- Google Maps Embed -->
+    <iframe 
+        src="https://www.google.com/maps?q=Atatürk,+Hoca+Ahmet+Yesevi+Cd.+No:175,+Buca+İzmir&output=embed"
+        width="100%" 
+        height="350" 
+        style="border:0; border-radius: 12px;" 
+        allowfullscreen 
+        loading="lazy">
+    </iframe>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiyatlar - Damla Güzellik Salonu</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #f7e9f1;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
+
+        /* Menü Butonu 🌸 */
+        .menu-button {
+            font-size: 32px;
+            cursor: pointer;
+            padding: 10px 16px;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 2001;
+            background-color: #f4bcd4;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            border: none;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            transition: 0.3s ease;
+        }
+
+        .menu-button:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #eea6c4;
+        }
+
+        /* Karanlık Arka Plan */
+        .overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            top: 0;
+            left: 0;
+            z-index: 2000;
+            display: none;
+        }
+
+        /* Yan Menü */
+        .side-menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #f7dcea;
+            overflow-x: hidden;
+            padding-top: 70px;
+            transition: 0.4s ease;
+            z-index: 2002;
+            border-right: 2px solid #f2c3d8;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .side-menu a {
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 21px;
+            color: #7d4a65;
+            display: block;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .side-menu a:hover {
+            background-color: #efc7d9;
+            padding-left: 40px;
+            color: white;
+        }
+
+        .side-menu.open {
+            width: 250px;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+
+        /* Başlık */
+        h1 {
+            margin-top: 70px;
+            color: #7a4b65;
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #7a4b65;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Kartlar */
+        .card {
+            background: white;
+            width: 85%;
+            max-width: 400px;
+            margin: 15px auto;
+            padding: 18px;
+            border-radius: 16px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .icon {
+            font-size: 28px;
+            margin-right: 12px;
+        }
+
+        .name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #7a4b65;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #8a5c70;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Menü -->
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+<div class="menu-button" onclick="toggleMenu()">🌸</div>
+
+<div id="sideMenu" class="side-menu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="fiyatlar.html">Fiyatlar</a>
+    <a href="randevu.html">Randevu</a>
+    <a href="iletisim.html">İletişim</a>
+    <a href="konum.html">Konum</a>
+    <a href="chatbot.html">Chatbot</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+</div>
+
+<h1>Fiyat Listesi</h1>
+
+<!-- ✨ YÜZ BAKIMI -->
+<h2>✨ Yüz Bakımı</h2>
+
+<div class="card"><div class="left"><span class="icon">👁️</span><span class="name">Kaş Alımı</span></div><div class="price">180₺</div></div>
+<div class="card"><div class="left"><span class="icon">👁️</span><span class="name">Kaş & Bıyık</span></div><div class="price">200₺</div></div>
+<div class="card"><div class="left"><span class="icon">💆‍♀️</span><span class="name">Yüz Sir (Komple)</span></div><div class="price">400₺</div></div>
+<div class="card"><div class="left"><span class="icon">👁️‍🗨️</span><span class="name">Kirpik Lifting</span></div><div class="price">800₺</div></div>
+
+<!-- ✨ VÜCUT AĞDA -->
+<h2>✨ Vücut Ağda</h2>
+
+<div class="card"><div class="left"><span class="icon">✨</span><span class="name">Koltuk Altı</span></div><div class="price">140₺</div></div>
+<div class="card"><div class="left"><span class="icon">✨</span><span class="name">Bel - Kalça - Göbek</span></div><div class="price">100₺</div></div>
+<div class="card"><div class="left"><span class="icon">✨</span><span class="name">Kollar</span></div><div class="price">200₺</div></div>
+<div class="card"><div class="left"><span class="icon">✨</span><span class="name">Özel Bölge</span></div><div class="price">300₺</div></div>
+<div class="card"><div class="left"><span class="icon">✨</span><span class="name">Bacak (Alt)</span></div><div class="price">260₺</div></div>
+<div class="card"><div class="left"><span class="icon">✨</span><span class="name">Bacak (Üst)</span></div><div class="price">280₺</div></div>
+<div class="card"><div class="left"><span class="icon">✨</span><span class="name">Tüm Bacak</span></div><div class="price">400₺</div></div>
+<div class="card"><div class="left"><span class="icon">✨</span><span class="name">Tüm Vücut</span></div><div class="price">800₺</div></div>
+
+<!-- ✨ EL & AYAK -->
+<h2>✨ El & Ayak Bakım</h2>
+
+<div class="card"><div class="left"><span class="icon">💅</span><span class="name">Manikür</span></div><div class="price">500₺</div></div>
+<div class="card"><div class="left"><span class="icon">💅</span><span class="name">Pedikür</span></div><div class="price">700₺</div></div>
+<div <div class="card"><div class="left"><span class="icon">💅</span><span class="name">Manikür & Pedikür</span></div><div class="price">1000₺</div></div>
+<div class="card"><div class="left"><span class="icon">💅</span><span class="name">Kalıcı Oje</span></div><div class="price">800₺</div></div>
+<div class="card"><div class="left"><span class="icon">💅</span><span class="name">Protez Tırnak</span></div><div class="price">1100₺</div></div>
+
+<script>
+function toggleMenu() {
+    let menu = document.getElementById("sideMenu");
+    let overlay = document.getElementById("overlay");
+
+    if (menu.classList.contains("open")) {
+        menu.classList.remove("open");
+        overlay.classList.remove("show");
+    } else {
+        menu.classList.add("open");
+        overlay.classList.add("show");
+    }
+}
+</script>
+
+</body>
+</html>

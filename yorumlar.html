@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yorumlar – Damla Güzellik Salonu</title>
+
+    <!-- Normal sade modern yazı tipi -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background: #f6e8ee;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: -260px;
+            top: 0;
+            width: 260px;
+            height: 100%;
+            background: #f2d1dd;
+            padding-top: 40px;
+            box-shadow: 3px 0px 20px rgba(0,0,0,0.2);
+            transition: 0.4s;
+            z-index: 999;
+        }
+        .sidebar a {
+            display: block;
+            padding: 18px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #7a4b63;
+            border-bottom: 1px solid #e6bccc;
+            text-align: center;
+        }
+
+        .menu-btn {
+            position: fixed;
+            left: 15px;
+            top: 15px;
+            font-size: 34px;
+            background: #f2d1dd;
+            padding: 8px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.45);
+            top: 0;
+            left: 0;
+            display: none;
+            z-index: 998;
+        }
+
+        .content {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #a45c7a;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .comment-box {
+            background: white;
+            max-width: 650px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            text-align: left;
+            font-size: 16px;
+            color: #7a4b63;
+            line-height: 1.6;
+        }
+        .comment-box .name {
+            font-size: 18px;
+            color: #a45c7a;
+            font-weight: 600;
+        }
+        .comment-box .date {
+            font-size: 14px;
+            opacity: 0.6;
+            margin-bottom: 8px;
+        }
+
+        .form-area {
+            background: white;
+            max-width: 650px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            text-align: left;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 2px solid #dcaac1;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        button {
+            background: #d991b6;
+            border: none;
+            color: white;
+            padding: 12px 22px;
+            font-size: 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #c6729c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menu-btn" onclick="openMenu()">🌸</div>
+
+    <div class="sidebar" id="sideMenu">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hizmetler.html">Hizmetler</a>
+        <a href="fiyatlar.html">Fiyatlar</a>
+        <a href="randevu.html">Randevu</a>
+        <a href="yorumlar.html">Yorumlar</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html">İletişim</a>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+    <div class="content">
+        <h1>Müşteri Yorumları</h1>
+
+        <!-- Yorumlar -->
+        <div id="comments">
+
+            <div class="comment-box">
+                <div class="name">Ayşe K.</div>
+                <div class="date">28 Kasım 2025</div>
+                Harika bir hizmet aldım! Manikürüm şahane oldu, çalışanlar çok tatlıydı. Kesinlikle tekrar geleceğim!
+            </div>
+
+            <div class="comment-box">
+                <div class="name">Melisa T.</div>
+                <div class="date">27 Kasım 2025</div>
+                Kirpik lifting yaptırdım, sonuç mükemmel! Hiç bu kadar doğal olacağını düşünmemiştim.
+            </div>
+
+            <div class="comment-box">
+                <div class="name">Gizem A.</div>
+                <div class="date">25 Kasım 2025</div>
+                Bacak ağdası hizmeti aldım, çok temiz ve hızlıydı. Güler yüzlü ekip için teşekkür ederim.
+            </div>
+
+        </div>
+
+        <!-- Form -->
+        <div class="form-area">
+            <h2 style="text-align:center;color:#a45c7a;font-size:26px;font-weight:600;">Yorum Yaz</h2>
+
+            <input type="text" id="name" placeholder="Adınız">
+            <textarea id="comment" rows="4" placeholder="Yorumunuz"></textarea>
+
+            <button onclick="addComment()">Gönder</button>
+        </div>
+
+    </div>
+
+    <script>
+        function openMenu() {
+            document.getElementById("sideMenu").style.left = "0";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function closeMenu() {
+            document.getElementById("sideMenu").style.left = "-260px";
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        function addComment() {
+            let name = document.getElementById("name").value;
+            let comment = document.getElementById("comment").value;
+
+            if (name.trim() === "" || comment.trim() === "") {
+                alert("Lütfen isim ve yorum giriniz.");
+                return;
+            }
+
+            let date = new Date();
+            let today = date.toLocaleDateString("tr-TR");
+
+            let box = document.createElement("div");
+            box.className = "comment-box";
+
+            box.innerHTML = `
+                <div class="name">${name}</div>
+                <div class="date">${today}</div>
+                ${comment}
+            `;
+
+            document.getElementById("comments").prepend(box);
+
+            document.getElementById("name").value = "";
+            document.getElementById("comment").value = "";
+        }
+    </script>
+
+</body>
+
+</html>

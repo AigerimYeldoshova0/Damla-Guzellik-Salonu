@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>İletişim – Damla Güzellik Salonu</title>
+
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff5f8;
+    margin: 0;
+}
+
+/* 🌸 Sol Menü */
+#sideMenu {
+    width: 230px;
+    height: 100%;
+    background: #f7cfe0;
+    position: fixed;
+    top: 0;
+    left: -260px;
+    padding: 25px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    transition: 0.35s;
+    z-index: 9999;
+}
+#sideMenu a {
+    display: block;
+    margin: 15px 0;
+    font-size: 18px;
+    color: #7a2340;
+    text-decoration: none;
+    font-weight: bold;
+}
+#menuBtn {
+    font-size: 35px;
+    cursor: pointer;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 10000;
+}
+.bg-dark {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 9000;
+}
+
+/* İçerik */
+.contact-box {
+    margin: 110px auto;
+    width: 90%;
+    max-width: 450px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.contact-box h2 {
+    text-align: center;
+    color: #a02160;
+}
+.info-item {
+    margin: 15px 0;
+    padding: 12px;
+    background: #ffe3ee;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.info-item a {
+    text-decoration: none;
+    color: #7a2340;
+    font-weight: bold;
+}
+.button {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background: #ff6fa8;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 17px;
+    text-decoration: none;
+}
+.button:hover {
+    background: #ff3f8a;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🌸 Menü -->
+<div id="menuBtn">🌸</div>
+
+<div id="sideMenu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="fiyatlar.html">Fiyatlar</a>
+    <a href="randevu.html">Randevu</a>
+    <a href="iletisim.html">İletişim</a>
+    <a href="konum.html">Konum</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="yorumlar.html">Yorumlar</a>
+</div>
+
+<div class="bg-dark" id="darkBG"></div>
+
+<script>
+const menu = document.getElementById("sideMenu");
+const bg = document.getElementById("darkBG");
+document.getElementById("menuBtn").onclick = () => {
+    menu.style.left = "0";
+    bg.style.display = "block";
+};
+bg.onclick = () => {
+    menu.style.left = "-260px";
+    bg.style.display = "none";
+};
+</script>
+
+<!-- 🌸 İLETİŞİM KUTUSU -->
+<div class="contact-box">
+    <h2>İletişim</h2>
+
+    <div class="info-item">
+        📍 <b>Adres:</b><br>
+        Atatürk, Hoca Ahmet Yesevi Cd. No:175 Kat:1 Daire:2  
+        <br>Buca / İzmir
+    </div>
+
+    <div class="info-item">
+        📞 <b>Telefon:</b>
+        <br><a href="tel:+905532249844">0553 224 98 44</a>
+    </div>
+
+    <div class="info-item">
+        💬 <b>WhatsApp:</b>
+        <br><a href="https://wa.me/905532249844">WhatsApp'tan Yaz</a>
+    </div>
+
+    <div class="info-item">
+        📸 <b>Instagram:</b>
+        <br><a href="https://instagram.com">instagram.com/damlaguzellik</a>
+    </div>
+
+    <div class="info-item">
+        ✉️ <b>E-posta:</b>
+        <br><a href="mailto:damlaguzellik4@gmail.com">damlaguzellik4@gmail.com</a>
+    </div>
+
+    <div class="info-item">
+        ⏰ <b>Çalışma Saatleri:</b><br>
+        Pazartesi – Cumartesi: 10:00 – 20:00<br>
+        Pazar: Kapalı
+    </div>
+
+    <a class="button" href="konum.html">📍 Haritada Gör</a>
+</div>
+
+</body>
+</html>

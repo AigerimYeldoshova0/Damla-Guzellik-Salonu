@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetler - Damla Güzellik Salonu</title>
+
+    <!-- Yazı tipi -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7e9f1;
+            text-align: center;
+        }
+
+        /* Menü Butonu 🌸 */
+        .menu-button {
+            font-size: 32px;
+            cursor: pointer;
+            padding: 10px 16px;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 2001;
+            background-color: #f4bcd4;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            border: none;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            transition: 0.3s ease;
+        }
+
+        .menu-button:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #eea6c4;
+        }
+
+        /* Karanlık Arka Plan */
+        .overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            top: 0;
+            left: 0;
+            z-index: 2000;
+            display: none;
+            transition: 0.4s ease;
+        }
+
+        /* Yan Menü */
+        .side-menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #f7dcea;
+            overflow-x: hidden;
+            padding-top: 70px;
+            transition: 0.4s ease;
+            box-shadow: 3px 0px 12px rgba(0,0,0,0.1);
+            z-index: 2002;
+            border-right: 2px solid #f2c3d8;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .side-menu a {
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 21px;
+            color: #7d4a65;
+            display: block;
+            transition: 0.3s ease;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .side-menu a:hover {
+            background-color: #efc7d9;
+            padding-left: 40px;
+            color: white;
+        }
+
+        /* Açık menü */
+        .side-menu.open {
+            width: 250px;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+
+        /* Sayfa Başlık */
+        h1 {
+            margin-top: 70px;
+            font-family: 'Playfair Display', serif;
+            color: #7a4b65;
+            font-size: 34px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            font-family: 'Playfair Display', serif;
+            color: #7d4a65;
+        }
+
+        /* Kart Tasarım */
+        .card {
+            background: #ffffff;
+            width: 85%;
+            max-width: 400px;
+            margin: 15px auto;
+            padding: 18px;
+            border-radius: 16px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .icon {
+            font-size: 32px;
+        }
+
+        .name {
+            font-size: 18px;
+            color: #7a4b65;
+            font-weight: 600;
+            text-align: left;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- MENÜ -->
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+<div class="menu-button" onclick="toggleMenu()">🌸</div>
+
+<div id="sideMenu" class="side-menu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="fiyatlar.html">Fiyatlar</a>
+    <a href="randevu.html">Randevu</a>
+    <a href="iletisim.html">İletişim</a>
+    <a href="konum.html">Konum</a>
+    <a href="chatbot.html">Chatbot</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+</div>
+
+<h1>Hizmetlerimiz</h1>
+
+<!-- ✨ YÜZ BAKIMI -->
+<h2>✨ Yüz Bakımı</h2>
+
+<div class="card"><div class="icon">👁️</div><div class="name">Kaş Alımı</div></div>
+<div class="card"><div class="icon">👁️</div><div class="name">Kaş & Bıyık</div></div>
+<div class="card"><div class="icon">💆‍♀️</div><div class="name">Yüz Sir (Komple)</div></div>
+<div class="card"><div class="icon">👁️‍🗨️</div><div class="name">Kirpik Lifting</div></div>
+
+<!-- ✨ VÜCUT AĞDA -->
+<h2>✨ Vücut Ağda</h2>
+
+<div class="card"><div class="icon">✨</div><div class="name">Koltuk Altı</div></div>
+<div class="card"><div class="icon">✨</div><div class="name">Bel – Kalça – Göbek</div></div>
+<div class="card"><div class="icon">✨</div><div class="name">Kollar</div></div>
+<div class="card"><div class="icon">✨</div><div class="name">Özel Bölge</div></div>
+<div class="card"><div class="icon">✨</div><div class="name">Bacak (Alt)</div></div>
+<div class="card"><div class="icon">✨</div><div class="name">Bacak (Üst)</div></div>
+<div class="card"><div class="icon">✨</div><div class="name">Tüm Bacak</div></div>
+<div class="card"><div class="icon">✨</div><div class="name">Tüm Vücut</div></div>
+
+<!-- ✨ EL & AYAK BAKIM -->
+<h2>✨ El & Ayak Bakım</h2>
+
+<div class="card"><div class="icon">💅</div><div class="name">Manikür</div></div>
+<div class="card"><div class="icon">💅</div><div class="name">Pedikür</div></div>
+<div class="card"><div class="icon">💅</div><div class="name">Manikür & Pedikür</div></div>
+<div class="card"><div class="icon">💅</div><div class="name">Kalıcı Oje</div></div>
+<div class="card"><div class="icon">💅</div><div class="name">Protez Tırnak</div></div>
+
+<script>
+function toggleMenu() {
+    let menu = document.getElementById("sideMenu");
+    let overlay = document.getElementById("overlay");
+
+    if (menu.classList.contains("open")) {
+        menu.classList.remove("open");
+        overlay.classList.remove("show");
+    } else {
+        menu.classList.add("open");
+        overlay.classList.add("show");
+    }
+}
+</script>
+
+</body>
+</html>
